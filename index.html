@@ -389,7 +389,10 @@ const ADMIN_PASSWORD = "srh2016";
 
 /* ── Config stored in localStorage (just credentials, not data) ── */
 const LS_CFG = "lb_jsonbin_cfg";
-let CFG = { key: "", bin: "" };
+let CFG = {
+  key: "YOUR_API_KEY",
+  bin: "69ca755436566621a860c322"
+};
 
 function loadCfg() {
   try { const c = JSON.parse(localStorage.getItem(LS_CFG)||"{}"); CFG = { key: c.key||"", bin: c.bin||"" }; } catch {}
@@ -402,25 +405,30 @@ function saveCfg() {
 const JSONBIN_BASE = "https://api.jsonbin.io/v3";
 
 async function remoteGet() {
+  console.log("Fetching data from JSONBin...");
+
   if (!CFG.key || !CFG.bin) return null;
+
   const r = await fetch(`${JSONBIN_BASE}/b/${CFG.bin}/latest`, {
-  headers: { 
-    "X-Master-Key": CFG.key,
-    "X-Bin-Meta": "false"
-  },
-  cache: "no-store"
-});
+    headers: { "X-Master-Key": CFG.key, "X-Bin-Meta": "false" },
+    cache: "no-store"
+  });
+
   if (!r.ok) throw new Error(`GET ${r.status}`);
-  return await r.json(); // returns the stored object directly
+  return await r.json();
 }
 
 async function remoteSet(data) {
+  console.log("Saving data to JSONBin...", data);
+
   if (!CFG.key || !CFG.bin) return false;
+
   const r = await fetch(`${JSONBIN_BASE}/b/${CFG.bin}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json", "X-Master-Key": CFG.key },
     body: JSON.stringify(data)
   });
+
   if (!r.ok) throw new Error(`PUT ${r.status}`);
   return true;
 }
@@ -834,7 +842,7 @@ document.addEventListener("keydown",e=>{
 setInterval(()=>{ if(!IS_ADMIN)syncLoad(); }, 5000);
 
 /* ═══ BOOT ═══ */
-loadCfg();
+//loadCfg();
 document.getElementById("match-date-input").value=new Date().toISOString().slice(0,10);
 // Show reconfigure button if already set up
 if(CFG.key&&CFG.bin)document.getElementById("recfg-btn").style.display="inline-block";
