@@ -404,8 +404,12 @@ const JSONBIN_BASE = "https://api.jsonbin.io/v3";
 async function remoteGet() {
   if (!CFG.key || !CFG.bin) return null;
   const r = await fetch(`${JSONBIN_BASE}/b/${CFG.bin}/latest`, {
-    headers: { "X-Master-Key": CFG.key, "X-Bin-Meta": "false" }
-  });
+  headers: { 
+    "X-Master-Key": CFG.key,
+    "X-Bin-Meta": "false"
+  },
+  cache: "no-store"
+});
   if (!r.ok) throw new Error(`GET ${r.status}`);
   return await r.json(); // returns the stored object directly
 }
@@ -753,7 +757,7 @@ async function submitMatch(){
   if(results.length<2){hint("Enter scores for at least 2 players.",true);return}
   MATCHES.push({id,date,results});
   renderAll();clearForm();hint("");showToast(`✓ ${id} added — saving…`);
-  await syncSave();showToast(`✓ ${id} saved globally`);
+  await syncLoad();showToast(`✓ ${id} saved globally`);
   const lb=document.getElementById("lb-card");lb.classList.remove("flash");void lb.offsetWidth;lb.classList.add("flash");
   setTimeout(()=>lb.scrollIntoView({behavior:"smooth",block:"nearest"}),200);
 }
@@ -776,16 +780,16 @@ function togglePlayerManager(){const pm=document.getElementById("player-manager"
 async function addPlayer(){
   const inp=document.getElementById("new-player-input");const name=inp.value.trim();if(!name)return;
   if(PLAYERS.includes(name)){showToast("Already exists.");return}
-  PLAYERS.push(name);inp.value="";renderPlayerChips();renderAll();showToast(`✓ ${name} added`);await syncSave();
+  PLAYERS.push(name);inp.value="";renderPlayerChips();renderAll();showToast(`✓ ${name} added`);await syncLoad();
 }
 async function removePlayer(name){
   if(!confirm(`Remove "${name}"? Past results remain.`))return;
-  PLAYERS=PLAYERS.filter(p=>p!==name);renderPlayerChips();renderAll();showToast(`${name} removed`);await syncSave();
+  PLAYERS=PLAYERS.filter(p=>p!==name);renderPlayerChips();renderAll();showToast(`${name} removed`);await syncLoad();
 }
 async function deleteMatch(idx){
   const m=MATCHES[idx];if(!m)return;
   if(!confirm(`Delete "${m.id}"?`))return;
-  MATCHES.splice(idx,1);renderAll();showToast(`"${m.id}" deleted`);await syncSave();
+  MATCHES.splice(idx,1);renderAll();showToast(`"${m.id}" deleted`);await syncLoad();
 }
 
 /* ═══ EDIT PLAYER NAME ═══ */
@@ -806,7 +810,7 @@ async function saveEditName(){
   const i=PLAYERS.indexOf(old);if(i!==-1)PLAYERS[i]=nv;
   MATCHES.forEach(m=>m.results.forEach(r=>{if(r.player===old)r.player=nv}));
   closeModal("edit-modal");editTarget=null;
-  renderAll();showToast(`✓ Renamed "${old}" → "${nv}"`);await syncSave();
+  renderAll();showToast(`✓ Renamed "${old}" → "${nv}"`);await syncLoad();
 }
 
 /* ═══ MODAL HELPERS ═══ */
@@ -827,7 +831,7 @@ document.addEventListener("keydown",e=>{
 });
 
 /* ═══ AUTO-REFRESH every 20s for public viewers ═══ */
-setInterval(()=>{ if(!IS_ADMIN)syncLoad(); }, 20000);
+setInterval(()=>{ if(!IS_ADMIN)syncLoad(); }, 5000);
 
 /* ═══ BOOT ═══ */
 loadCfg();
