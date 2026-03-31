@@ -47,7 +47,7 @@ const MATCHES = [
     { player: "Fluker", score: 876 },
     { player: "Bengali", score: 737.5 }
   ]
-}
+},
 {
   id: "MI vs KKR",
   date: "2026-03-29",
@@ -61,7 +61,7 @@ const MATCHES = [
     { player: "Kalu", score: 431 },
     { player: "Bengali", score: 736.5 }
   ]
-}
+},
 {
   id: "RAJ vs CSK",
   date: "2026-03-30",
