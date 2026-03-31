@@ -44,8 +44,34 @@ const MATCHES = [
     { player: "Baniya", score: 906 },
     { player: "AlluArjun", score: 788.5 },
     { player: "Spammer", score: 896.5 },
-    { player: "Fluker", score: 110 },
+    { player: "Fluker", score: 876 },
     { player: "Bengali", score: 737.5 }
+  ]
+}
+{
+  id: "MI vs KKR",
+  date: "2026-03-29",
+  results: [
+    { player: "Muscleman", score: 851 },
+    { player: "Baniya", score: 791 },
+    { player: "Mutheri", score: 809 },
+    { player: "AlluArjun", score: 772.5 },
+    { player: "Spammer", score: 749 },
+    { player: "Fluker", score: 724 },
+    { player: "Kalu", score: 431 },
+    { player: "Bengali", score: 736.5 }
+  ]
+}
+{
+  id: "RAJ vs CSK",
+  date: "2026-03-30",
+  results: [
+    { player: "Muscleman", score: 582 },
+    { player: "Baniya", score: 594 },
+    { player: "AlluArjun", score: 612 },
+    { player: "Spammer", score: 551 },
+    { player: "Fluker", score: 454.5 },
+    { player: "Bengali", score: 590 }
   ]
 }
   // ── To add a new match, copy the block below and fill it in:
