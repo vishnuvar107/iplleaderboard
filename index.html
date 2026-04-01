@@ -73,6 +73,8 @@
   color: var(--ink);
   font-family: var(--ff-body);
   min-height: 100vh;
+  font-size: 16.5px;        /* ✅ ADD THIS */
+  letter-spacing: 0.02em;
 }
 
     /* ── Page chrome ── */
@@ -137,14 +139,14 @@
       background: var(--red);
     }
     h1 {
-      font-family: var(--ff-display);
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      font-weight: 800;
-      line-height: .95;
-      letter-spacing: -.02em;
-      color: var(--ink);
-      text-shadow: 0 0 20px rgba(59,130,246,0.4);
-    }
+  font-family: var(--ff-display);
+  font-size: clamp(3.2rem, 7vw, 5.5rem); /* bigger */
+  font-weight: 400; /* reduce boldness */
+  letter-spacing: 0.04em; /* more breathing space */
+  line-height: 1.05;
+  color: var(--ink);
+  text-shadow: 0 0 20px rgba(59,130,246,0.4);
+}
     .masthead-deck {
       margin-top: 14px;
       font-size: .95rem;
@@ -246,11 +248,12 @@
       vertical-align: middle;
     }
     .lb-table td.r {
-      text-align: right;
-      font-family: var(--ff-mono);
-      font-size: .82rem;
-      color: var(--ink-3);
-    }
+  text-align: right;
+  font-family: var(--ff-mono);
+  font-size: .95rem; /* bigger */
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
     .lb-table td.c { text-align: center; }
 
     /* Rank cell */
@@ -305,19 +308,21 @@ tr.top-3 {
       flex-shrink: 0;
     }
     .lb-name {
-      font-family: var(--ff-display);
-      font-size: .92rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
+  font-family: var(--ff-display);
+  font-size: 1.05rem; /* increased */
+  font-weight: 500;   /* less heavy */
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
 
     /* Points highlight */
     .lb-pts {
-      font-family: var(--ff-display);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
+  font-family: var(--ff-display);
+  font-size: 1.3rem; /* bigger */
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
     tr.top-1 .lb-pts { color: var(--medal-1); }
     tr.top-2 .lb-pts { color: var(--medal-2); }
     tr.top-3 .lb-pts { color: var(--medal-3); }
