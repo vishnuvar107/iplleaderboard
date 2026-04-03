@@ -16,7 +16,7 @@
     After editing data.js, just reload the page (F5).
   -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700&family=Lato:wght@300;400;700&family=Yellowtail&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700&family=Lato:wght@300;400;700&family=Lora:wght@400;500;600&family=Yellowtail&display=swap" rel="stylesheet">
 
   <style>
     /* ══════════════════════════════════════════════════
@@ -70,14 +70,15 @@
   font-family: var(--ff-body);
   font-size: 17px;
   letter-spacing: 0.03em;
+  overflow-x: hidden;
 }
 
     /* ── Page chrome ── */
     .page-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 32px 120px;
-    }
+  max-width: 1200px;
+  margin: 0 auto;   /* ✅ centers everything */
+  padding: 0 20px 80px;
+}
 
     /* ── Top rule ── */
     .top-rule {
@@ -137,23 +138,18 @@
       height: 2px;
       background: var(--turquoise);
     }
-    h1 {
+   h1 {
   font-family: var(--ff-accent);
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 400;
   letter-spacing: 0.05em;
-
-  color: var(--turquoise);
-
-  text-shadow: 0 0 30px rgba(6,182,212,0.4);
-}
 
   background: linear-gradient(90deg, #e2e8f0, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   text-shadow: 0 0 40px rgba(56,189,248,0.25);
-}
+}5
     .masthead-deck {
       margin-top: 14px;
       font-size: .95rem;
@@ -237,22 +233,13 @@
   font-family: var(--ff-body);
   font-size: 0.7rem;
   letter-spacing: 0.15em;
+  white-space: nowrap;
   color: var(--ink-2);
 }
 
     /* Header row */
     
-    .lb-table th {
-      font-family: var(--ff-mono);
-      font-size: .6rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(255,249,240,.5);
-      padding: 14px 20px;
-      text-align: left;
-      font-weight: 400;
-      white-space: nowrap;
-    }
+    
     .lb-table th.r { text-align: right; }
     .lb-table th.c { text-align: center; }
 
@@ -320,7 +307,7 @@ tr.top-3 {
     .lb-player {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .lb-avatar {
       width: 34px;
@@ -336,13 +323,14 @@ tr.top-3 {
       flex-shrink: 0;
     }
    .lb-name {
-  font-family: var(--ff-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: #fffff0; /* ivory */
 }
+
+
 
     /* Points highlight */
    .lb-pts {
@@ -402,21 +390,20 @@ tr.top-3 {
     /* Summary footer */
     .lb-footer {
   display: flex;
-  border-top: 1px solid rgba(251,191,36,0.3);
-
+  width: 100%;
   background: linear-gradient(
     135deg,
     #f5e6c8,
     #e6c79c,
     #d4af37
   );
-
   color: #1f2937;
 }
     .lb-fstat {
       flex: 1;
       padding: 16px 20px;
-      border-right: 1px solid var(--ink-2);
+      border-right: none;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     .lb-fstat:last-child { border-right: none; }
     .lb-fstat-label {
@@ -530,14 +517,11 @@ tr.top-3 {
     tr.mr-3 td:first-child { border-left: 2px solid var(--medal-3); }
 
     .mt-player {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--ff-display);
-      font-size: .82rem;
-      font-weight: 500;
-      color: var(--ink);
-    }
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+}
     .mt-avatar {
       width: 24px; height: 24px;
       border-radius: 50%;
@@ -642,26 +626,54 @@ tr.top-3 {
     .match-card:nth-child(6)  { animation-delay: .26s }
     
     /* Fix leaderboard overflow on mobile */
-.lb-wrap {
-  overflow-x: auto;
-}
 
 /* Make table scrollable instead of breaking layout */
-@media (max-width: 700px) {
-  .lb-table {
-  width: 100%;
-  table-layout: fixed;
-}
-}
+
     /* ── Responsive ── */
-    @media (max-width: 700px) {
-      .page-wrap { padding: 0 16px 80px; }
-      .masthead { grid-template-columns: 1fr; }
-      .masthead-stats { flex-direction: row; align-items: flex-start; }
-      .matches-grid { grid-template-columns: 1fr; }
-      .lb-table th:nth-child(2),
-.lb-table td:nth-child(2) {
-  width: 30%; /* Player column */
+   @media (max-width: 700px) {
+
+  .page-wrap { padding: 0 16px 80px; }
+
+  .masthead { grid-template-columns: 1fr; }
+
+  .masthead-stats { 
+    flex-direction: row; 
+    align-items: flex-start; 
+  }
+
+  .matches-grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  /* ✅ KEY FIX: allow horizontal scroll */
+  .lb-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+     width: 100%;
+  border-radius: 16px;
+  }
+
+  /* ✅ prevent table from shrinking */
+  .lb-table {
+    min-width: 650px;
+    width: 100%;
+  }
+
+  /* ✅ fix spacing */
+  .lb-table th,
+  .lb-table td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  /* ✅ hide less important columns */
+  .lb-table th:nth-child(3),
+  .lb-table td:nth-child(3),
+  .lb-table th:nth-child(7),
+  .lb-table td:nth-child(7) {
+    display: none;
+  }
 }
 @media (max-width: 500px) {
   
@@ -712,9 +724,9 @@ tr.top-3 {
 
   <!-- ═══════════════ MAIN LEADERBOARD ═══════════════ -->
   <div class="sec-head" style="margin-top:36px">
-    <span class="sec-title">Overall Rankings</span>
-    <span class="sec-rule"></span>
-    <span class="sec-count" id="lb-count">—</span>
+    <span class="section-title">Overall Rankings</span>
+    <span class="section-rule"></span>
+    <span class="section-count" id="lb-count">—</span>
   </div>
 
   <div class="lb-wrap">
@@ -736,10 +748,10 @@ tr.top-3 {
   </div>
 
   <!-- ═══════════════ MATCH HISTORY ═══════════════ -->
-  <div class="sec-head">
-    <span class="sec-title">Match History</span>
-    <span class="sec-rule"></span>
-    <span class="sec-count" id="match-count">—</span>
+  <div class="section-head">
+    <span class="section-title">Match History</span>
+    <span class="section-rule"></span>
+    <span class="section-count" id="match-count">—</span>
   </div>
 
   <div class="matches-grid" id="matches-grid"></div>
