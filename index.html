@@ -184,12 +184,13 @@
     .sec-head {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
       margin: 52px 0 20px;
     }
-    .section-title {
-  font-size: 1rem;
-  letter-spacing: 0.25em;
+    .sec-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--turquoise);
   position: relative;
@@ -198,7 +199,7 @@
   gap: 12px;
 }
 
-.section-title::after {
+.sec-title::after {
   content: "";
   flex: 1;
   height: 1px;
@@ -326,7 +327,7 @@ tr.top-3 {
   font-family: 'Lora', serif;
   font-size: 1.15rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   color: #fffff0; /* ivory */
 }
 
@@ -391,6 +392,7 @@ tr.top-3 {
     .lb-footer {
   display: flex;
   width: 100%;
+  flex-direction: row;
   background: linear-gradient(
     135deg,
     #f5e6c8,
@@ -402,8 +404,9 @@ tr.top-3 {
     .lb-fstat {
   flex: 1;
   padding: 16px 20px;
-  border-right: 1px solid rgba(0,0,0,0.1); /* add separator */
-      border-bottom: 1px solid rgba(0,0,0,0.1);
+  width: 100%;
+  border-right: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     .lb-fstat:last-child { border-right: none; }
     .lb-fstat-label {
@@ -427,7 +430,7 @@ tr.top-3 {
     .matches-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
   .match-card {
@@ -648,6 +651,8 @@ tr.top-3 {
   /* ✅ KEY FIX: allow horizontal scroll */
   .lb-wrap {
     overflow-x: auto;
+    overflow: hidden;
+    padding-bottom: 10px;
     -webkit-overflow-scrolling: touch;
      width: 100%;
   border-radius: 16px;
@@ -682,6 +687,10 @@ tr.top-3 {
   text-shadow: 0 0 25px rgba(37,99,235,0.4);
 }
 
+.lb-footer {
+    flex-direction: column; /* ✅ only mobile */
+  }
+
   .lb-avatar {
     width: 28px;
     height: 28px;
@@ -703,7 +712,7 @@ tr.top-3 {
 
   <!-- Top rule -->
   <div class="top-rule">
-    <span class="top-rule-label">Game League</span>
+    <span class="top-rule-label">ABUSEMENT PARK</span>
     <span class="top-rule-line"></span>
     <span class="top-rule-season" id="season-label">—</span>
   </div>
