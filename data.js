@@ -116,6 +116,20 @@ const MATCHES = [
     { player: "Muscleman", score: 740 },
     { player: "Bengali", score: 634 }
   ]
+},
+
+  {
+  id: "CSK vs PBKS",
+  date: "2026-04-03",
+  results: [
+    { player: "Fluker", score: 968.5 },
+    { player: "Spammer", score: 847.5 },
+    { player: "Muscleman", score: 786 },
+    { player: "Kalu", score: 777.5 },
+    { player: "Bengali", score: 777.5 },
+    { player: "Baniya", score: 748 },
+    { player: "AlluArjun", score: 680.5 }
+  ]
 }
 ];
   // ── To add a new match, copy the block below and fill it in:
