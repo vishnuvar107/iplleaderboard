@@ -130,6 +130,28 @@ const MATCHES = [
     { player: "Baniya", score: 748 },
     { player: "AlluArjun", score: 680.5 }
   ]
+},
+  {
+  match: "DC vs MI",
+  scores: [
+    { name: "FLUKER", score: 686.5 },
+    { name: "BANIYA", score: 428 },
+    { name: "SPAMMER", score: 458.5 },
+    { name: "BENGALI", score: 412.5 },
+    { name: "KALU", score: 384.5 },
+    { name: "ALLUARJUN", score: 561 }
+  ]
+},
+  {
+  match: "GT vs RR",
+  scores: [
+    { name: "FLUKER", score: 965.5 },
+    { name: "BENGALI", score: 951.5 },
+    { name: "ALLUARJUN", score: 944.5 },
+    { name: "BANIYA", score: 940.5 },
+    { name: "SPAMMER", score: 786.5 },
+    { name: "MUSCLEMAN", score: 753 }
+  ]
 }
 ];
   // ── To add a new match, copy the block below and fill it in:
