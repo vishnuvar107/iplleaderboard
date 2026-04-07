@@ -177,6 +177,18 @@ const MATCHES = [
     { player: "Muscleman", score: 850 },
     { player: "Kalu", score:642.5}
   ]
+},
+  {
+  id: "RR vs MI",
+  date: "2026-04-07",
+  results: [
+    { player: "Fluker", score: 724.5 },
+    { player: "Bengali", score: 551.5 },
+    { player: "AlluArjun", score: 603 },
+    { player: "Baniya", score: 704 },
+    { player: "Spammer", score: 615.5 },
+    { player: "Muscleman", score: 616.5 }
+  ]
 }
 ];
   // ── To add a new match, copy the block below and fill it in:
