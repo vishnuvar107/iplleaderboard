@@ -361,6 +361,42 @@ const MATCHES = [
     { player: "Spammer", score: 761 },
     { player: "Muscleman", score: 738.5 }
   ]
+},
+   {
+  id: "PBKS vs LSG",
+  date: "2026-04-19",
+  results: [
+    { player: "Fluker", score: 898.5 },
+    { player: "Bengali", score: 959 },
+    { player: "AlluArjun", score: 956 },
+    { player: "Baniya", score: 862.5 },
+    { player: "Spammer", score: 882 },
+    { player: "Muscleman", score: 844.5 }
+  ]
+},
+   {
+  id: "GT vs MI",
+  date: "2026-04-20",
+  results: [
+    { player: "Fluker", score: 515 },
+    { player: "Bengali", score: 581.5 },
+    { player: "AlluArjun", score: 515.5 },
+    { player: "Baniya", score: 662.5 },
+    { player: "Spammer", score: 654.5 },
+    { player: "Muscleman", score: 739.5 }
+  ]
+},
+   {
+  id: "SRH vs DC",
+  date: "2026-04-21",
+  results: [
+    { player: "Fluker", score: 964.5 },
+    { player: "Bengali", score: 1083 },
+    { player: "AlluArjun", score: 893.5 },
+    { player: "Baniya", score: 934.5 },
+    { player: "Spammer", score: 897.5 },
+    { player: "Muscleman", score: 915.5 }
+  ]
 }
   
 ];
