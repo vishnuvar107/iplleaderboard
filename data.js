@@ -480,7 +480,7 @@ const MATCHES = [
 },
   {
   id: "DC vs RCB",
-  date: "2026-04-24",
+  date: "2026-04-27",
   results: [
     { player: "Fluker", score: 502 },
     { player: "Bengali", score: 402.5 },
@@ -488,6 +488,30 @@ const MATCHES = [
     { player: "Baniya", score: 568.5 },
     { player: "Spammer", score: 555.5 },
     { player: "Muscleman", score: 604.5 }
+  ]
+},
+  {
+  id: "PBKS vs RR",
+  date: "2026-04-28",
+  results: [
+    { player: "Fluker", score: 758 },
+    { player: "Bengali", score: 747.5 },
+    { player: "AlluArjun", score: 727 },
+    { player: "Baniya", score: 735.5 },
+    { player: "Spammer", score: 729.5 },
+    { player: "Muscleman", score: 811.5 }
+  ]
+},
+  {
+  id: "MI vs SRH",
+  date: "2026-04-29",
+  results: [
+    { player: "Fluker", score: 850.5 },
+    { player: "Bengali", score: 818.5 },
+    { player: "AlluArjun", score: 900.5 },
+    { player: "Baniya", score: 1010.5 },
+    { player: "Spammer", score: 773.5 },
+    { player: "Muscleman", score: 865.5 }
   ]
 }
   
