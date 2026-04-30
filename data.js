@@ -513,6 +513,18 @@ const MATCHES = [
     { player: "Spammer", score: 773.5 },
     { player: "Muscleman", score: 865.5 }
   ]
+},
+  {
+  id: "GT vs RCB",
+  date: "2026-04-30",
+  results: [
+    { player: "Fluker", score: 731.5 },
+    { player: "Bengali", score: 793 },
+    { player: "AlluArjun", score: 901.5 },
+    { player: "Baniya", score: 890 },
+    { player: "Spammer", score: 857.5 },
+    { player: "Muscleman", score: 823 }
+  ]
 }
   
   
