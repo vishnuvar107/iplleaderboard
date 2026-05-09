@@ -596,6 +596,41 @@ const MATCHES = [
     { player: "Spammer", score: 601.5 },
     { player: "Muscleman", score: 694}
   ]
+},
+  {
+  id: "SRH vs PBKS",
+  date: "2026-05-06",
+  results: [
+    { player: "Fluker", score: 890.5 },
+    { player: "Bengali", score: 970.5 },
+    { player: "AlluArjun", score: 1056.5 },
+    { player: "Baniya", score: 946.5 },
+    { player: "Spammer", score: 939.5 },
+    { player: "Muscleman", score: 798.5}
+  ]
+},
+  {
+  id: "LSG vs RCB",
+  date: "2026-05-07",
+  results: [
+    { player: "Fluker", score: 842.5 },
+    { player: "Bengali", score: 804.5 },
+    { player: "Baniya", score: 892 },
+    { player: "Spammer", score: 892 },
+    { player: "Muscleman", score: 729}
+  ]
+},
+  {
+  id: "DC vs KKR",
+  date: "2026-05-08",
+  results: [
+    { player: "Fluker", score: 811.5 },
+    { player: "Bengali", score: 697 },
+    { player: "AlluArjun", score: 754 },
+    { player: "Baniya", score: 634.5 },
+    { player: "Spammer", score: 531 },
+    { player: "Muscleman", score: 506.5}
+  ]
 }
   
   
